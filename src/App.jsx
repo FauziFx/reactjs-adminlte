@@ -1,6 +1,7 @@
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import SideNav from "./components/SideNav";
+import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 
 function App() {
@@ -21,6 +22,7 @@ const Layout = () => {
       <Navbar />
       <SideNav />
       <Outlet />
+      <Footer />
     </div>
   );
 };
