@@ -46,6 +46,45 @@ const SideNav = () => {
     );
   };
 
+  const NavLinkDropdown = ({
+    id,
+    title,
+    url,
+    icon,
+    dropdown,
+    isActive,
+    onClick,
+  }) => {
+    return (
+      <>
+        <a
+          href={"#" + title}
+          data-toggle="collapse"
+          aria-expanded="false"
+          className={isActive ? "nav-link active" : "nav-link"}
+          onClick={() => navigate(id)}
+        >
+          <i className={"nav-icon fas " + icon}></i>
+          <p>
+            {title}
+            <i className="right fa fa-chevron-down"></i>
+          </p>
+        </a>
+        <div id={title} className="collapse">
+          <ul className="">
+            {dropdown.map((item, index) => (
+              <li className="nav-item text-light" key={index}>
+                <Link to={url} className="nav-link">
+                  <p>{title}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </>
+    );
+  };
+
   const navigate = (id) => {
     setActive(id);
   };
@@ -89,11 +128,19 @@ const SideNav = () => {
           >
             {dataMenu.map((item) => (
               <li className="nav-item" key={item.id}>
-                <NavLink
-                  {...item}
-                  isActive={active === item.id}
-                  onClick={navigate}
-                />
+                {item.dropdown ? (
+                  <NavLinkDropdown
+                    {...item}
+                    isActive={active === item.id}
+                    onClick={navigate}
+                  />
+                ) : (
+                  <NavLink
+                    {...item}
+                    isActive={active === item.id}
+                    onClick={navigate}
+                  />
+                )}
               </li>
             ))}
           </ul>
