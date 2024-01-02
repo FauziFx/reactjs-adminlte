@@ -35,7 +35,7 @@ const Navbar = () => {
             <div className="dropdown-divider" />
             <div className="dropdown-divider" />
             <a href="#" className="dropdown-item dropdown-footer">
-              See All Messages
+              <i className="fas fa-sign-out-alt"></i> Sign Out
             </a>
           </div>
         </li>
