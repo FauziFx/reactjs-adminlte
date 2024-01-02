@@ -1,9 +1,10 @@
 import React from "react";
+import Breadcrumb from "../components/Breadcrumb";
 
 const Home = () => {
   return (
     <div className="content-wrapper">
-      <h1>Home Page</h1>
+      <Breadcrumb title="Dashboard" />
     </div>
   );
 };

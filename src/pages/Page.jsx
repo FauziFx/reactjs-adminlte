@@ -1,9 +1,10 @@
 import React from "react";
+import Breadcrumb from "../components/Breadcrumb";
 
 const Page = () => {
   return (
     <div className="content-wrapper">
-      <h1>Page</h1>
+      <Breadcrumb title="Page" />
     </div>
   );
 };
