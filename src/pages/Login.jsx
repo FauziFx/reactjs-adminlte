@@ -1,6 +1,8 @@
 import React from "react";
+import useDocumentTitle from "../utils/useDocumentTitle";
 
 const Login = () => {
+  useDocumentTitle("Login");
   return (
     <div className="login-page">
       <div className="login-box">
