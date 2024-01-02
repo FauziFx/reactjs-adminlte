@@ -19,8 +19,8 @@ const SideNav = () => {
       url: "",
       icon: "fa-table",
       dropdown: [
-        { title: "Dropdown1", url: "1" },
-        { title: "Dropdown1", url: "1" },
+        { title: "Page 1", url: "page1" },
+        { title: "Page 2", url: "page2" },
       ],
       clicked: false,
     },
@@ -74,8 +74,8 @@ const SideNav = () => {
           <ul className="">
             {dropdown.map((item, index) => (
               <li className="nav-item text-light" key={index}>
-                <Link to={url} className="nav-link">
-                  <p>{title}</p>
+                <Link to={item.url} className="nav-link">
+                  <p>{item.title}</p>
                 </Link>
               </li>
             ))}
