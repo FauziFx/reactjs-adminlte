@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import SideNav from "./components/SideNav";
 import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import Page from "./pages/Page";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="" element={<Home />} />
+          <Route path="page" element={<Page />} />
         </Route>
       </Routes>
     </BrowserRouter>
